@@ -14,7 +14,7 @@ int counter;
 
 void setup() {
   background(255);
-  size(750, 750);
+  size(563*2 , 750*2);
   noLoop();
   beginRecord(PDF, "filename.pdf"); 
   centerX = width/2;
@@ -28,6 +28,7 @@ void setup() {
 
 void draw() {
   // Draw something good here
+  
   for (float i=0.0; i<2.0*PI; i+=2.0*PI/n) {
     counter++;
     if (counter==1 || counter==130) {
@@ -42,7 +43,7 @@ void draw() {
     println("cose: " + x);
     line(centerX, centerY, x, y);
   }
-
+ 
   
   counter=0;
   
@@ -58,7 +59,8 @@ void draw() {
       //line(centerX, centerY, x+1, y+1);
     }
   }
-  
+ 
+ 
     counter=0;
   
   for (float i=0.003; i<2.0*PI; i+=2.0*PI/n) {
@@ -73,7 +75,7 @@ void draw() {
       //line(centerX, centerY, x+1, y+1);
     }
   }
-  
+   
   counter=0;
   
   for (float i=0.001; i<2.0*PI; i+=2.0*PI/n) {
@@ -88,6 +90,7 @@ void draw() {
       //line(centerX, centerY, x+1, y+1);
     }
   }
+  
   
 
  counter=0; 
@@ -124,5 +127,12 @@ void draw() {
   
 
   endRecord();
+  
 }
 
+
+void keyReleased() {
+  if (key == 'r') {
+    save("image.png"); 
+  } 
+}
